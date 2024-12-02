@@ -4,11 +4,13 @@ import TextInput from "../TextInput";
 import OptionsList from "../OptionsList";
 import Button from "../Button";
 
-const Form = () => {
+const Form = (props) => {
   const [nombre, setNombre] = useState("");
   const [puesto, setpuesto] = useState("");
   const [foto, setFoto] = useState("");
   const [equipo, setEquipo] = useState("");
+
+  const {registrarColaborador} = props
 
   const manejarEnvio = (event) => {
     event.preventDefault();
@@ -19,7 +21,7 @@ const Form = () => {
         foto: foto,
         equipo: equipo
     }
-    console.log(datosEnviar)
+    registrarColaborador(datosEnviar)
   };
 
   return (
@@ -50,6 +52,7 @@ const Form = () => {
         <OptionsList
             valor={equipo}
             updateValue={setEquipo}
+            equipos={props.equipos}
         />
         <Button>Crear</Button>
       </form>
