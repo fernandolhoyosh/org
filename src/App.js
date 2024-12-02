@@ -5,7 +5,7 @@ import Header from './components/Header/Header.js';
 import Form from './components/Form/Form.js';
 import MiOrg from './components/MiOrg/index.js';
 import Team from './components/Team/index.js';
-import Footer from './Footer/index.jsx';
+import Footer from './components/Footer/index.jsx';
 
 function App() {
 
